@@ -8,7 +8,11 @@
    text-decoration: none;
 }
 
-.container{
+.loginbtn{
+
+}
+
+ {
  /*   min-height: 100vh;
    display: flex;
    align-items: center;
@@ -17,37 +21,37 @@
    padding-bottom: 60px; */
 }
 
-.container .content{
+  .content{
    text-align: center;
 }
 
-.container .content h3{
+  .content h3{
    font-size: 30px;
    color:#333;
 }
 
-.container .content h3 span{
+  .content h3 span{
    background: crimson;
    color:#fff;
    border-radius: 5px;
    padding:0 15px;
 }
 
-.container .content h1{
+  .content h1{
    font-size: 50px;
    color:#333;
 }
 
-.container .content h1 span{
+  .content h1 span{
    color:crimson;
 }
 
-.container .content p{
+  .content p{
    font-size: 25px;
    margin-bottom: 20px;
 }
 
-.container .content .btn{
+  .content .btn{
    display: inline-block;
    padding:10px 30px;
    font-size: 20px;
@@ -57,21 +61,12 @@
    text-transform: capitalize;
 }
 
-.container .content .btn:hover{
+  .content .btn:hover{
    background: crimson;
 }
 
-.form-container{
-   min-height: 100vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding:20px;
-   padding-bottom: 60px;
-   background: #eee;
-}
 
-.form-container form{
+  form{
    padding:20px;
    border-radius: 5px;
    box-shadow: 0 5px 10px rgba(0,0,0,.1);
@@ -80,15 +75,15 @@
    width: 500px;
 }
 
-.form-container form h3{
+  form h3{
    font-size: 30px;
    text-transform: uppercase;
    margin-bottom: 10px;
    color:#333;
 }
 
-.form-container form input,
-.form-container form select{
+  form input,
+  form select{
    width: 100%;
    padding:10px 15px;
    font-size: 17px;
@@ -97,11 +92,11 @@
    border-radius: 5px;
 }
 
-.form-container form select option{
+  form select option{
    background: #fff;
 }
 
-.form-container form .form-btn{
+  form .form-btn{
    background: #fbd0d9;
    color:crimson;
    text-transform: capitalize;
@@ -109,22 +104,22 @@
    cursor: pointer;
 }
 
-.form-container form .form-btn:hover{
+  form .form-btn:hover{
    background: crimson;
    color:#fff;
 }
 
-.form-container form p{
+  form p{
    margin-top: 10px;
    font-size: 20px;
    color:#333;
 }
 
-.form-container form p a{
+  form p a{
    color:crimson;
 }
 
-.form-container form .error-msg{
+  form .error-msg{
    margin:10px 0;
    display: block;
    background: crimson;
