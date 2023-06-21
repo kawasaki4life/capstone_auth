@@ -12,9 +12,9 @@ $employees = "SELECT * FROM employees";
 
 $result = mysqli_query($conn, $employees);
 while ($row = mysqli_fetch_assoc($result)) {
-   echo "First Name: " . $row["firstName"] . "<br>";
+  /*  echo "First Name: " . $row["firstName"] . "<br>";
    echo "Last Name: " . $row["lastName"] . "<br>";
-   echo "Email: " . $row["email"] . "<br>";
+   echo "Email: " . $row["email"] . "<br>"; */
 }
 
 
@@ -41,7 +41,8 @@ while ($row = mysqli_fetch_assoc($result)) {
    <div class="content flex-row">
       <h1>Welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
       <br>
-      <p class=" align-items-center ps-1"> this is an admin page</p>
+      <p class=" align-items-center ps-1"> this is an Super Admin page</p>
+      <a href="update.php" class="btn">update users</a>
       <a href="logout.php" class="btn">logout</a>
    </div>
 </div>
