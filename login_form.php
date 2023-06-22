@@ -52,12 +52,12 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body >
    
-<div class="form-container">
+<div class=" d-flex justify-content-center align-items-center p-5">
 
    <form action="" method="post">
-      <h3>login now</h3>
+      <h3>log-in now</h3>
       <?php
       if(isset($error)){
          foreach($error as $error){

@@ -22,15 +22,14 @@ if(!isset($_SESSION['user_name'])){
    <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="bg-dark">
    
-<div class="container">
-
+<div class="container my-5">
+   <div class="content flex-row text-white">
    <div class="content">
-      <h3>hi, <span>user</span></h3>
-      <h1>welcome <span><?php echo $_SESSION['user_name'] ?></span></h1>
+      <h1 class="text-white">Welcome <span> <?php echo $_SESSION['user_name'] ?></span></h1>
       <p>this is an user page</p>
-  
+   <div class="content flex-row my-3">
       <a href="logout.php" class="btn">logout</a>
    </div>
 

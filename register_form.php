@@ -1,37 +1,43 @@
 <?php
-
 @include 'config.php';
 
 if(isset($_POST['submit'])){
-
    $name = mysqli_real_escape_string($conn, $_POST['name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $pass = md5($_POST['password']);
    $cpass = md5($_POST['cpassword']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$pass' ";
+   // Check if the name already exists
+   $selectName = "SELECT * FROM user_form WHERE name = '$name'";
+   $resultName = mysqli_query($conn, $selectName);
+   $selectEmail = "SELECT * FROM user_form WHERE email = '$email'";
+   $resultEmail = mysqli_query($conn, $selectEmail);
+   
+   if(mysqli_num_rows($resultName) > 0){
+      $error[] = 'Username already taken!';
+   } elseif(mysqli_num_rows($resultEmail) > 0){
+      $error[] = 'Email already taken!';
 
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $error[] = 'user already exist!';
-
-   }else{
-
-      if($pass != $cpass){
-         $error[] = 'password not matched!';
-      }else{
-         $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
-         mysqli_query($conn, $insert);
-         header('location:login_form.php');
+   } else {
+      // Continue with the existing email and password check
+      
+      $select = "SELECT * FROM user_form WHERE email = '$email' && password = '$pass'";
+      $result = mysqli_query($conn, $select);
+   
+      if(mysqli_num_rows($result) > 0){
+         $error[] = 'User already exists!';
+      } else {
+         if($pass != $cpass){
+            $error[] = 'Passwords do not match!';
+         } else {
+            $insert = "INSERT INTO user_form(name, email, password, user_type) VALUES('$name','$email','$pass','$user_type')";
+            mysqli_query($conn, $insert);
+            header('location:login_form.php');
+         }
       }
    }
-
-};
-
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +54,7 @@ if(isset($_POST['submit'])){
 </head>
 <body>
    
-<div class="form-container">
+<div class="d-flex justify-content-center align-items-center p-5">
 
    <form action="" method="post">
       <h3>register now</h3>

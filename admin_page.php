@@ -35,15 +35,20 @@ while ($row = mysqli_fetch_assoc($result)) {
    <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body class="bg-dark">
    
-<div class="container">
-   <div class="content flex-row">
-      <h1>Welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
+<div class="container my-5">
+   <div class="content flex-row text-white">
+      <h1 class="text-white">Welcome <span><?php echo $_SESSION['admin_name'] ?></span></h1>
       <br>
       <p class=" align-items-center ps-1"> this is an Super Admin page</p>
-      <a href="update.php" class="btn">update users</a>
-      <a href="logout.php" class="btn">logout</a>
+      <a href="users.php" class="btn">update users</a>
+   </div>
+   <div class="content flex-row my-3">
+   <a href="employees.php" class="btn">update employees</a>
+   </div>
+   <div class="content flex-row my-3">
+   <a href="logout.php" class="btn">logout</a>
    </div>
 </div>
 

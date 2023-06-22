@@ -20,9 +20,9 @@ $result = mysqli_query($conn, $users);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Update</title>
 </head>
-<body class="bg-dark">
+<body class="bg-dark mx-2">
    <div>
-   <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between my-2">
          <h1 class="text-white">User Table</h1>
          <button class="rounded-pill"><a href="admin_page.php" class="text-decoration-none text-dark">Back To Main Page</a> </button>
       </div>
@@ -44,11 +44,12 @@ $result = mysqli_query($conn, $users);
       echo '<td>' . $row["email"] . '</td>';
       echo '<td>' . $row["password"] . '</td>';
       echo '<td>' . $row["user_type"] . '</td>';
-      echo '<td><button class="rounded-pill">Edit</button></td>';
+      echo '<td><button class="rounded-pill text-bg-danger"><a href="edit_user.php?id=' . $row["id"] . '" class="text-dark text-decoration-none">Edit</a></button></td>';
       echo '</tr>';
       }
       echo '</table>';
    ?>
+   
    </div>
   
 </body>
